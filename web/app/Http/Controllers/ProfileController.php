@@ -26,7 +26,7 @@ class ProfileController extends Controller
 
     }
 
-    public function destory()
+    public function destroy()
     {
 
     }

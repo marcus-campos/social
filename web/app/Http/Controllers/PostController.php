@@ -26,7 +26,7 @@ class PostController extends Controller
 
     }
 
-    public function destory()
+    public function destroy()
     {
 
     }

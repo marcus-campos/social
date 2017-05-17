@@ -26,7 +26,7 @@ class TagsController extends Controller
 
     }
 
-    public function destory()
+    public function destroy()
     {
 
     }
