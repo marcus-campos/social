@@ -17,4 +17,9 @@ class Profiles extends Model
         'gender',
         'owner_id'
     ];
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -16,13 +16,16 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('birthday');
+            $table->string('birthday')->nullable();
             $table->string('description')->nullable();
             $table->string('phone')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('cover_photo')->nullable();
+            $table->string('slug')->nullable();
             $table->string('city')->nullable();
             $table->string('region')->nullable(); //State or Province
             $table->string('country')->nullable();
-            $table->enum('gender', ['male', 'female', 'other']);
+            $table->enum('gender', ['male', 'female', 'other', 'undefined'])->default('undefined')->nullable();
             $table->integer('owner_id')->unsigned();
             $table->timestamps();
         });

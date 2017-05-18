@@ -12,4 +12,9 @@ class Posts extends Model
         'like',
         'profiles_id'
     ];
+
+    public function profile()
+    {
+        return $this->belongsTo(Profiles::class, 'profiles_id');
+    }
 }

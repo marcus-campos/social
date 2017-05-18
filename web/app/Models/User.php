@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -26,4 +28,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile()
+    {
+        return $this->belongsTo(Profiles::class, 'owner_id');
+    }
+
+    public function profileId()
+    {
+        return User::find(Auth::id())->with('profile')->profile->id;
+    }
 }
